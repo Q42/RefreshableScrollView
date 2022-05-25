@@ -11,6 +11,8 @@ This view works by wrapping `UIScrollView` internally and putting your SwiftUI v
 
 ## Examples
 
+A full sample project with various refreshable views is available at: https://github.com/Q42/RefreshableScrollViewDemo
+
 ### Basic example
 
 ```swift
