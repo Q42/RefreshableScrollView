@@ -5,6 +5,8 @@ It responds to the `.refreshable()` modifier, so you use it in the exact same wa
 
 It also supports passing in a custom `UIRefreshControl`, so that you may have loaders with a custom look.
 
+![demo](https://user-images.githubusercontent.com/477710/170267593-7026758f-99c6-4175-87b2-ea03acd3ff9b.gif)
+
 ## How does it work?
 
 This view works by wrapping `UIScrollView` internally and putting your SwiftUI view in a UIHostingController within the scroll view.
