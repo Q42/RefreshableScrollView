@@ -103,7 +103,18 @@ class ScrollViewController<Content: View>: UIViewController, UIScrollViewDelegat
     scrollView.delegate = self
 
     hostingController.willMove(toParent: self)
-    scrollView.embedToEdges(hostingController.view)
+
+    scrollView.addSubview(hostingController.view)
+    hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+
+    NSLayoutConstraint.activate([
+      hostingController.view.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+      hostingController.view.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+      hostingController.view.topAnchor.constraint(equalTo: scrollView.topAnchor),
+      hostingController.view.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+    ])
+
+    // `addChild` must be called *after* the layout constraints have been set, or a layout bug will occur
     addChild(hostingController)
     hostingController.didMove(toParent: self)
     hostingController.view.backgroundColor = .clear
