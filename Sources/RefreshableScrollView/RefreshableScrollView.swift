@@ -56,6 +56,7 @@ struct ScrollViewControllerRepresentable<Content: View>: UIViewControllerReprese
 
   func updateUIViewController(_ viewController: ScrollViewController<Content>, context: Context) {
     viewController.hostingController.rootView = content()
+    viewController.hostingController.view.setNeedsUpdateConstraints()
 
     if isRefreshing {
       viewController.refreshControl.beginRefreshing()
