@@ -1,5 +1,7 @@
 # RefreshableScrollView
 
+**This project is no longer in use.** Wrapping SwiftUI views in UIKit views, and embedding them again in SwiftUI is a significant source of bugs. Be warned!
+
 In SwiftUI, it is currently only possible to use pull to refresh on `List` views. This package provides a custom scroll view that is refreshable, so that you can pull to refresh any SwiftUI view you desire. 
 It responds to the `.refreshable()` modifier, so you use it in the exact same way as you would refresh a List.
 
